@@ -74,6 +74,7 @@ int main(int argc, char *argv[])
         {
             // temporary storage
             RGBTRIPLE triple;
+            // initializing the variables to zero
             triple.rgbtRed = 0;
             triple.rgbtBlue = 0;
             triple.rgbtGreen = 0;
@@ -83,7 +84,8 @@ int main(int argc, char *argv[])
              
             // if the pixel is completely red
             if (triple.rgbtRed == 255 && triple.rgbtBlue == 0 && triple.rgbtGreen == 0)
-            {
+            { 
+                // initializing the variables to zero
                 triple.rgbtRed = 0;
                 triple.rgbtBlue = 0;
                 triple.rgbtGreen = 0;
@@ -103,7 +105,7 @@ int main(int argc, char *argv[])
         // skip over padding, if any
         fseek(inptr, padding, SEEK_CUR);
 
-        // then add it back (to demonstrate how)
+        // then add it back 
         for (int k = 0; k < padding; k++)
         {
             fputc(0x00, outptr);
@@ -116,6 +118,6 @@ int main(int argc, char *argv[])
     // close outfile
     fclose(outptr);
 
-    // success
+    // success returning value of zero 
     return 0;
 }
