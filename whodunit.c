@@ -79,13 +79,14 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
              
-            
+            // if the pixel is completely red
             if (triple.rgbtRed == 255 && triple.rgbtBlue == 0 && triple.rgbtGreen == 0)
             {
                 triple.rgbtRed = 0;
                 triple.rgbtBlue = 0;
                 triple.rgbtGreen = 0;
             }
+            // if the pixel is completely white
             if (triple.rgbtRed == 255 && triple.rgbtBlue == 255 && triple.rgbtGreen == 255)
             {
                 triple.rgbtRed = 255;
