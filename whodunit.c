@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 
     // open input file 
     FILE *inptr = fopen(infile, "r");
+    // to check that the input file is not null
     if (inptr == NULL)
     {
         fprintf(stderr, "Could not open %s.\n", infile);
@@ -30,6 +31,7 @@ int main(int argc, char *argv[])
 
     // open output file
     FILE *outptr = fopen(outfile, "w");
+    // to check whether the output file is not null
     if (outptr == NULL)
     {
         fclose(inptr);
